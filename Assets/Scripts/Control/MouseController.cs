@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Raton.Movement;
 
 namespace Raton.Control 
@@ -19,15 +20,9 @@ namespace Raton.Control
             mover.Move(moveDirection);
         }
 
-        private void Update() 
+        private void OnMove(InputValue value)
         {
-            DirectionFromInput();
-        }
-
-        private void DirectionFromInput()
-        {
-            moveDirection.x = Input.GetAxisRaw("Horizontal");
-            moveDirection.y = Input.GetAxisRaw("Vertical");
+            moveDirection = value.Get<Vector2>();
 
             // Disable diagonal movement
             if (Mathf.Abs(moveDirection.x) > Mathf.Abs(moveDirection.y))
@@ -38,6 +33,13 @@ namespace Raton.Control
             {
                 moveDirection.x = 0;
             }
+        }
+
+        // TODO: Delete this once I add the wall hole and remove hide
+        // action in input system
+        private void OnHide()
+        {
+            
         }
     }
 }

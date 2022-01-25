@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2791346210313380365}
   - component: {fileID: 159005629494785735}
   - component: {fileID: 3140244424169666701}
+  - component: {fileID: 2467650208114451166}
   m_Layer: 0
   m_Name: Mouse
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0031149387, y: -0.034035653}
+  m_Offset: {x: -0.0031149387, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8103347, y: 0.6933395}
+  m_Size: {x: 1.1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2791346210313380365
 Rigidbody2D:
@@ -127,6 +128,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea329dc624034ad197dcd729f6611c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2467650208114451166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454506525475114620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 07059ef4daefb43e8b6942e20049d28a, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &7751394621010118995
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +226,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1227261469
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -4234539393518388770, guid: 9aea2b276ed244d0db150002425b1a08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

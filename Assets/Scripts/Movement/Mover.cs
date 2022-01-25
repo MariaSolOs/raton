@@ -11,44 +11,42 @@ namespace Raton.Movement
         [SerializeField]
         private float speed;
 
-        private new Rigidbody2D rigidbody;
+        private Rigidbody2D rigidBody;
         private Animator animator;
         private bool movingBackwards;
 
         private void Awake() 
         {
-            rigidbody = GetComponent<Rigidbody2D>();
+            rigidBody = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
         }
 
         public void Move(Vector2 direction)
         {
-            rigidbody.velocity = direction * speed;
+            direction.Normalize();
+            rigidBody.velocity = direction * speed;
 
             // Rotate the sprite when moving to the left
-            if (direction.x < 0)
+            bool hasHorizontalSpeed = Mathf.Abs(rigidBody.velocity.x) > 0;
+            if (hasHorizontalSpeed)
             {
-                transform.right = Vector2.left;
-            }
-            else if (direction.x > 0)
-            {
-                transform.right = Vector2.right;
+                transform.localScale = new Vector2(Mathf.Sign(rigidBody.velocity.x), 1);
             }
 
             // For distinguishing front and back idle states
-            float verticalVelocity = direction.y; 
-            if (!Mathf.Approximately(direction.y, 0))
+            float verticalDirection = direction.y;
+            if (!Mathf.Approximately(verticalDirection, 0))
             {
-                movingBackwards = direction.y > 0;
+                movingBackwards = verticalDirection > 0;
             }
             else if (movingBackwards)
             {
-                verticalVelocity = IdleEpsilon;
+                verticalDirection = IdleEpsilon;
             }
 
             animator.SetFloat("horizontalSpeed", Mathf.Abs(direction.x));
             animator.SetFloat("verticalSpeed", Mathf.Abs(direction.y));
-            animator.SetFloat("verticalVelocity", verticalVelocity);
+            animator.SetFloat("verticalVelocity", verticalDirection);
         }
     }
 }
