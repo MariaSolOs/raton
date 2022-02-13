@@ -37,9 +37,9 @@ namespace Raton.Control
 
         // TODO: Delete this once I add the wall hole and remove hide
         // action in input system
-        private void OnHide()
+        private void OnHide(InputValue value)
         {
-            
+
         }
     }
 }
