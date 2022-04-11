@@ -60,6 +60,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -388,6 +389,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      cat-walk_1: -8608308254121594674
+      cat-walk_6: -2441220613110683880
+      cat-walk_9: -2624569111434363370
+      cat-walk_7: 7189944349869561306
+      cat-walk_2: 70055174154265350
+      cat-walk_4: 930769649027626900
+      cat-walk_8: -8325989926084504338
+      cat-walk_10: -6280910571407390601
+      cat-walk_3: 6953939085022279265
+      cat-walk_5: -405426182989909273
+      cat-walk_0: -5046611770140122412
+      cat-walk_11: -8398224817839019438
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

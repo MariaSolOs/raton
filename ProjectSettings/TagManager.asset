@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Room
+    uniqueID: 1293070365
+    locked: 0
+  - name: Room Items
+    uniqueID: 2377648703
+    locked: 0
   - name: Cat
     uniqueID: 3284274155
     locked: 0
