@@ -15,10 +15,7 @@ namespace Raton.Control
             mover = GetComponent<Mover>();
         }
 
-        private void FixedUpdate() 
-        {
-            mover.Move(moveDirection);
-        }
+        private void FixedUpdate() => mover.Move(moveDirection);
 
         private void OnMove(InputValue value)
         {

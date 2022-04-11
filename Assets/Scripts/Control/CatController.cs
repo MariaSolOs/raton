@@ -19,10 +19,7 @@ namespace Raton.Control
             mouse = FindObjectOfType<MouseController>().transform;
         }
 
-        private void FixedUpdate()
-        {
-            Move();
-        }
+        private void FixedUpdate() => Move();
 
         private void Move()
         {
