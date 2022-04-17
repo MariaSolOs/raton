@@ -31,12 +31,5 @@ namespace Raton.Control
                 moveDirection.x = 0;
             }
         }
-
-        // TODO: Delete this once I add the wall hole and remove hide
-        // action in input system
-        private void OnHide(InputValue value)
-        {
-
-        }
     }
 }

@@ -1,5 +1,5 @@
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Raton.Core
 {
@@ -18,25 +18,64 @@ namespace Raton.Core
         [SerializeField]
         [Tooltip("The maximum coordinates at which the item can be spawned.")]
         private Vector2 maximumBounds;
+        [SerializeField]
+        [Tooltip("Tags of the game objects to avoid overlap with.")]
+        private string[] cannotOverlap;
 
         private void Awake() 
         {
             Debug.Assert(minimumBounds.x <= maximumBounds.x, "Minimum horizontal bound should be less than or equal to maximum horizontal bound.");
             Debug.Assert(minimumBounds.y <= maximumBounds.y, "Minimum vertical bound should be less than or equal to maximum vertical bound.");
 
+            float itemRadius = GetItemRadius();
             for (int i = 0; i < itemsToSpawn; i++)
             {
                 Instantiate(
                     itemPrefab, 
-                    GetRandomPosition(), 
+                    GetRandomPosition(itemRadius), 
                     itemPrefab.transform.rotation,
                     transform
                 );
             }
+        }
 
-            Vector2 GetRandomPosition() => new Vector2(
-                Random.Range(minimumBounds.x, maximumBounds.x),
-                Random.Range(minimumBounds.y, maximumBounds.y)
+        /// <summary>
+        /// Computes the radius of the item for overlap detection.
+        /// </summary>
+        /// <returns>The radius of the item's collision volume.</returns>
+        private float GetItemRadius()
+        {
+            Vector3? extents = itemPrefab.GetComponent<Collider2D>()?.bounds.extents;
+            if (extents == null || cannotOverlap.Length == 0)
+            {
+                return 0;
+            }
+
+            return Mathf.Max(extents.Value.x, extents.Value.y);
+        }
+
+        /// <summary>
+        /// Computes a random position (avoiding overlap if applicable) at which
+        /// the game object may be spawned.
+        /// </summary>
+        /// <param name="itemRadius">The radius of the item's collision volume.</param>
+        /// <returns>The spawning position.</returns>
+        private Vector2 GetRandomPosition(float itemRadius)
+        {
+            Vector2 position;
+
+            do
+            {
+                position = new Vector2(
+                    Random.Range(minimumBounds.x, maximumBounds.x),
+                    Random.Range(minimumBounds.y, maximumBounds.y)
+                );
+            } while (IsPositionOccupied());
+            
+            return position;
+
+            bool IsPositionOccupied() => Physics2D.OverlapCircleAll(position, itemRadius).Any(collider => 
+                cannotOverlap.Any(tag => collider.CompareTag(tag))
             );
         }
     }
