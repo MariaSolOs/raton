@@ -25,7 +25,7 @@ namespace Raton.Control
         {
             if (Vector2.Distance(mouse.position, transform.position) <= chaseDistance)
             {
-                return;
+                mover.Move(Vector2.zero);
             }
 
             var direction = Vector2.zero;
