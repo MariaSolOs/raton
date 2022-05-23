@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Cheese
   - Cat
+  - Mouse Hole
+  - Milk Bowl
   layers:
   - Default
   - TransparentFX
