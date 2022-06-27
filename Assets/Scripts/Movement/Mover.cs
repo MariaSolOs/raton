@@ -4,7 +4,7 @@ namespace Raton.Movement
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Animator))]
-    public class Mover : MonoBehaviour
+    internal sealed class Mover : MonoBehaviour
     {
         private const float IdleEpsilon = 0.01F;
 

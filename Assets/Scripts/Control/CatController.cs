@@ -4,7 +4,7 @@ using Raton.Movement;
 namespace Raton.Control
 {
     [RequireComponent(typeof(Mover))]
-    public class CatController : MonoBehaviour
+    internal sealed class CatController : MonoBehaviour
     {
         [SerializeField]
         [Tooltip("The distance at which the cat will stop chasing the mouse.")]
@@ -28,7 +28,7 @@ namespace Raton.Control
                 mover.Move(Vector2.zero);
             }
 
-            var direction = Vector2.zero;
+            Vector2 direction = Vector2.zero;
             float deltaX = mouse.position.x - transform.position.x;
             float deltaY = mouse.position.y - transform.position.y;
 

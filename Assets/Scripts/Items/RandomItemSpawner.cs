@@ -1,9 +1,9 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Raton.Core
+namespace Raton.Items
 {
-    public class RandomItemSpawner : MonoBehaviour
+    internal sealed class RandomItemSpawner : MonoBehaviour
     {
         [SerializeField]
         [Tooltip("The prefab of the item to spawn.")]

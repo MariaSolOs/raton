@@ -5,7 +5,7 @@ using Raton.Movement;
 namespace Raton.Control 
 {
     [RequireComponent(typeof(Mover))]
-    public class MouseController : MonoBehaviour
+    internal sealed class MouseController : MonoBehaviour
     {
         private Mover mover;
         private Vector2 moveDirection;
