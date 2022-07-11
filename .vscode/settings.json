@@ -52,5 +52,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "todo-tree.general.rootFolder": "Assets/Scripts"
+    "todo-tree.general.rootFolder": "Assets/Scripts",
+    "omnisharp.enableRoslynAnalyzers": false
 }

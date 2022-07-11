@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 159005629494785735}
   - component: {fileID: 3140244424169666701}
   - component: {fileID: 2467650208114451166}
+  - component: {fileID: 6088249107630896354}
   m_Layer: 0
   m_Name: Mouse
   m_TagString: Player
@@ -160,6 +161,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6088249107630896354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454506525475114620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1195246a6944db2b397ee8f1d5e010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemTag: Cheese
 --- !u!1 &7751394621010118995
 GameObject:
   m_ObjectHideFlags: 0

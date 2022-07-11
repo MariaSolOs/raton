@@ -3,15 +3,19 @@ using UnityEngine;
 
 namespace Raton.Items
 {
-    internal sealed class RandomItemSpawner : MonoBehaviour
+    internal sealed class RandomSpawner : MonoBehaviour
     {
         [SerializeField]
         [Tooltip("The prefab of the item to spawn.")]
         private GameObject itemPrefab;
         [SerializeField]
-        [Tooltip("The number of items to spawn.")]
+        [Tooltip("The minimum number of items to spawn.")]
+        [Min(0)]
+        private int minimumItemsToSpawn;
+        [SerializeField]
+        [Tooltip("The maximum number of items to spawn.")]
         [Min(1)]
-        private int itemsToSpawn;
+        private int maximumItemsToSpawn;
         [SerializeField]
         [Tooltip("The minimum coordinates at which the item can be spawned.")]
         private Vector2 minimumBounds;
@@ -28,6 +32,7 @@ namespace Raton.Items
             Debug.Assert(minimumBounds.y <= maximumBounds.y, "Minimum vertical bound should be less than or equal to maximum vertical bound.");
 
             float itemRadius = GetItemRadius();
+            int itemsToSpawn = Random.Range(minimumItemsToSpawn, maximumItemsToSpawn + 1);
             for (int i = 0; i < itemsToSpawn; i++)
             {
                 Instantiate(
@@ -45,8 +50,9 @@ namespace Raton.Items
         /// <returns>The radius of the item's collision volume.</returns>
         private float GetItemRadius()
         {
-            Vector3? extents = itemPrefab.GetComponent<Collider2D>()?.bounds.extents;
-            if (extents == null || cannotOverlap.Length == 0)
+            var collider = itemPrefab.GetComponent<Collider2D>();
+            Vector3? extents = collider is null ? null : collider.bounds.extents;
+            if (extents is null || cannotOverlap.Length == 0)
             {
                 return 0;
             }

@@ -368,6 +368,14 @@ PrefabInstance:
       value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
+      propertyPath: maximumItemsToSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
+      propertyPath: minimumItemsToSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
       propertyPath: cannotOverlap.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2777,6 +2785,14 @@ PrefabInstance:
       value: -3.9
       objectReference: {fileID: 0}
     - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
+      propertyPath: maximumItemsToSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
+      propertyPath: minimumItemsToSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
       propertyPath: cannotOverlap.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2921,6 +2937,14 @@ PrefabInstance:
     - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
       propertyPath: minimumBounds.y
       value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
+      propertyPath: maximumItemsToSpawn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
+      propertyPath: minimumItemsToSpawn
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 577559989838115174, guid: cb3f76592a8194c4a9808e6030c1a672, type: 3}
       propertyPath: cannotOverlap.Array.size
