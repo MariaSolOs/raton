@@ -23,9 +23,11 @@ namespace Raton.Control
 
         private void Move()
         {
+            // Stop moving when we're close enough
             if (Vector2.Distance(mouse.position, transform.position) <= chaseDistance)
             {
                 mover.Move(Vector2.zero);
+                return;
             }
 
             Vector2 direction = Vector2.zero;
